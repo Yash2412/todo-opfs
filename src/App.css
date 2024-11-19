@@ -20,19 +20,22 @@ h1 {
   padding: 10px;
   font-size: 16px;
   margin-right: 10px;
+  border-radius: 4px;
 }
 
 .todo-input input[type="file"] {
   margin-bottom: 10px;
+  height: 30px;
 }
 
 .todo-input button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4caf50;
+  background-color: #6c63ff;
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .todo-input button:disabled {

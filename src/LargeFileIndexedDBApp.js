@@ -79,33 +79,6 @@ function LargeFileIndexedDBApp() {
     await deleteTodo(id);
   };
 
-  const renderMedia = (media) => {
-    if (!media) return null;
-
-    const blob = new Blob([media.data], { type: media.type });
-    const url = URL.createObjectURL(blob);
-
-    if (media.type.startsWith("image/")) {
-      return <img src={url} alt="Todo attachment" className="todo-media" />;
-    } else if (media.type.startsWith("audio/")) {
-      return <audio src={url} controls className="todo-media" />;
-    } else if (
-      media.type.startsWith("video/") ||
-      media.type === "video/x-matroska"
-    ) {
-      return <video src={url} controls className="todo-media" />;
-    }
-
-    return (
-      <p>
-        File: {media.name} ({(media.size / 1024 / 1024).toFixed(2)} MB){" "}
-        <a href={url} download={media.name}>
-          Download
-        </a>
-      </p>
-    );
-  };
-
   return (
     <div className="App">
       <h1>Large File IndexedDB Todo App</h1>
